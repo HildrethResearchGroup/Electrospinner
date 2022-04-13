@@ -7,19 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA0E6B4228009AA7008FDBA0 /* VoltageSupplyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E6B4128009AA7008FDBA0 /* VoltageSupplyView.swift */; };
+		AA19E38727FCCDF700E72714 /* ElectrospinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19E38627FCCDF700E72714 /* ElectrospinnerView.swift */; };
+		AA19E38927FCD4E700E72714 /* DinoLiteVideoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19E38827FCD4E700E72714 /* DinoLiteVideoView.swift */; };
+		AA19E38B27FCD53900E72714 /* ExampleVideo.mov in Resources */ = {isa = PBXBuildFile; fileRef = AA19E38A27FCD53900E72714 /* ExampleVideo.mov */; };
 		AA2AD9C327F7B03B001ED9A8 /* ElectrospinnerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2AD9C227F7B03B001ED9A8 /* ElectrospinnerApp.swift */; };
 		AA2AD9C527F7B03B001ED9A8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2AD9C427F7B03B001ED9A8 /* ContentView.swift */; };
 		AA2AD9C727F7B03C001ED9A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA2AD9C627F7B03C001ED9A8 /* Assets.xcassets */; };
 		AA2AD9CA27F7B03C001ED9A8 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA2AD9C927F7B03C001ED9A8 /* Preview Assets.xcassets */; };
+		AA2AD9D627F7B0A9001ED9A8 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2AD9D527F7B0A9001ED9A8 /* CameraView.swift */; };
+		AA2AD9DA27F7B0D3001ED9A8 /* SyringePumpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2AD9D927F7B0D3001ED9A8 /* SyringePumpView.swift */; };
+		AA2AD9DC27F7B0F7001ED9A8 /* ParameterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2AD9DB27F7B0F7001ED9A8 /* ParameterView.swift */; };
+		AAC3B3FF27F8CC5200DB4A59 /* SyringePumpController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC3B3FE27F8CC5200DB4A59 /* SyringePumpController.swift */; };
+		AAC3B40127F8CC6000DB4A59 /* VoltageSupplyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC3B40027F8CC5F00DB4A59 /* VoltageSupplyController.swift */; };
+		AAC3B40427F8CD4B00DB4A59 /* Electrospinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC3B40327F8CD4B00DB4A59 /* Electrospinner.swift */; };
+		AAC3B40627F8D66E00DB4A59 /* ExamplePhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = AAC3B40527F8D66E00DB4A59 /* ExamplePhoto.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AA0E6B4128009AA7008FDBA0 /* VoltageSupplyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoltageSupplyView.swift; sourceTree = "<group>"; };
+		AA19E38627FCCDF700E72714 /* ElectrospinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrospinnerView.swift; sourceTree = "<group>"; };
+		AA19E38827FCD4E700E72714 /* DinoLiteVideoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DinoLiteVideoView.swift; sourceTree = "<group>"; };
+		AA19E38A27FCD53900E72714 /* ExampleVideo.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = ExampleVideo.mov; sourceTree = "<group>"; };
 		AA2AD9BF27F7B03B001ED9A8 /* Electrospinner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Electrospinner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA2AD9C227F7B03B001ED9A8 /* ElectrospinnerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrospinnerApp.swift; sourceTree = "<group>"; };
 		AA2AD9C427F7B03B001ED9A8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AA2AD9C627F7B03C001ED9A8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA2AD9C927F7B03C001ED9A8 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AA2AD9CB27F7B03C001ED9A8 /* Electrospinner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Electrospinner.entitlements; sourceTree = "<group>"; };
+		AA2AD9D527F7B0A9001ED9A8 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		AA2AD9D927F7B0D3001ED9A8 /* SyringePumpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyringePumpView.swift; sourceTree = "<group>"; };
+		AA2AD9DB27F7B0F7001ED9A8 /* ParameterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterView.swift; sourceTree = "<group>"; };
+		AAC3B3FE27F8CC5200DB4A59 /* SyringePumpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyringePumpController.swift; sourceTree = "<group>"; };
+		AAC3B40027F8CC5F00DB4A59 /* VoltageSupplyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoltageSupplyController.swift; sourceTree = "<group>"; };
+		AAC3B40327F8CD4B00DB4A59 /* Electrospinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Electrospinner.swift; sourceTree = "<group>"; };
+		AAC3B40527F8D66E00DB4A59 /* ExamplePhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ExamplePhoto.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +74,12 @@
 		AA2AD9C127F7B03B001ED9A8 /* Electrospinner */ = {
 			isa = PBXGroup;
 			children = (
+				AAC3B40527F8D66E00DB4A59 /* ExamplePhoto.png */,
+				AA19E38A27FCD53900E72714 /* ExampleVideo.mov */,
+				AAC3B40227F8CCAF00DB4A59 /* Data Models */,
+				AA2AD9D227F7B07B001ED9A8 /* Equipment Controllers */,
+				AA2AD9D127F7B04E001ED9A8 /* Views */,
 				AA2AD9C227F7B03B001ED9A8 /* ElectrospinnerApp.swift */,
-				AA2AD9C427F7B03B001ED9A8 /* ContentView.swift */,
 				AA2AD9C627F7B03C001ED9A8 /* Assets.xcassets */,
 				AA2AD9CB27F7B03C001ED9A8 /* Electrospinner.entitlements */,
 				AA2AD9C827F7B03C001ED9A8 /* Preview Content */,
@@ -67,6 +93,37 @@
 				AA2AD9C927F7B03C001ED9A8 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AA2AD9D127F7B04E001ED9A8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AA2AD9C427F7B03B001ED9A8 /* ContentView.swift */,
+				AA2AD9D527F7B0A9001ED9A8 /* CameraView.swift */,
+				AA2AD9D927F7B0D3001ED9A8 /* SyringePumpView.swift */,
+				AA2AD9DB27F7B0F7001ED9A8 /* ParameterView.swift */,
+				AA19E38627FCCDF700E72714 /* ElectrospinnerView.swift */,
+				AA19E38827FCD4E700E72714 /* DinoLiteVideoView.swift */,
+				AA0E6B4128009AA7008FDBA0 /* VoltageSupplyView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AA2AD9D227F7B07B001ED9A8 /* Equipment Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AAC3B3FE27F8CC5200DB4A59 /* SyringePumpController.swift */,
+				AAC3B40027F8CC5F00DB4A59 /* VoltageSupplyController.swift */,
+			);
+			path = "Equipment Controllers";
+			sourceTree = "<group>";
+		};
+		AAC3B40227F8CCAF00DB4A59 /* Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				AAC3B40327F8CD4B00DB4A59 /* Electrospinner.swift */,
+			);
+			path = "Data Models";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,7 +185,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA2AD9CA27F7B03C001ED9A8 /* Preview Assets.xcassets in Resources */,
+				AAC3B40627F8D66E00DB4A59 /* ExamplePhoto.png in Resources */,
 				AA2AD9C727F7B03C001ED9A8 /* Assets.xcassets in Resources */,
+				AA19E38B27FCD53900E72714 /* ExampleVideo.mov in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +199,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA2AD9C527F7B03B001ED9A8 /* ContentView.swift in Sources */,
+				AA2AD9DA27F7B0D3001ED9A8 /* SyringePumpView.swift in Sources */,
+				AA0E6B4228009AA7008FDBA0 /* VoltageSupplyView.swift in Sources */,
+				AAC3B40427F8CD4B00DB4A59 /* Electrospinner.swift in Sources */,
+				AAC3B40127F8CC6000DB4A59 /* VoltageSupplyController.swift in Sources */,
 				AA2AD9C327F7B03B001ED9A8 /* ElectrospinnerApp.swift in Sources */,
+				AAC3B3FF27F8CC5200DB4A59 /* SyringePumpController.swift in Sources */,
+				AA19E38927FCD4E700E72714 /* DinoLiteVideoView.swift in Sources */,
+				AA2AD9D627F7B0A9001ED9A8 /* CameraView.swift in Sources */,
+				AA19E38727FCCDF700E72714 /* ElectrospinnerView.swift in Sources */,
+				AA2AD9DC27F7B0F7001ED9A8 /* ParameterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
