@@ -6,33 +6,44 @@
 //
 
 import SwiftUI
-
-enum syringePumpUnits: String {
-    case ml_hr = "ml/hr"
-    case ul_hr = "µl/hr"
-    case ml_min = "ml/min"
-    case ul_min = "µl/min"
-}
-
-extension syringePumpUnits: CaseIterable, Identifiable {
-    var id: Self {self}
-}
+import ORSSerial
 
 struct SyringePumpView: View {
-    @State private var flowRate: String = ""
-    @State private var units: syringePumpUnits = .ml_hr
+    @ObservedObject var controller = SyringePumpController()
     
     var body: some View {
         VStack {
-            Form {
-                TextField("Flow Rate", text: $flowRate)
-                Picker("Units", selection: $units) {
-                    ForEach(syringePumpUnits.allCases) { unit in
+            
+            HStack {
+                Picker("Select Port", selection: $controller.serialPort) {
+                    ForEach(controller.serialPortManager.availablePorts, id:\.self) { port in
+                        Text(port.name).tag(port as ORSSerialPort?)
+                    }
+                }
+                Button(controller.nextPortState) {controller.openOrClosePort()}
+            }.frame(alignment: .leading)
+            
+            HStack {
+                TextField("Flow Rate: ", text: $controller.flowRate)
+                Picker("Units: ", selection: $controller.units) {
+                    ForEach(SyringePumpController.flowRateUnits.allCases) { unit in
                         Text(unit.rawValue)
                     }
                 }
-            }
-            Button("Start Pumping"){}
+                Button("Set Flow Rate"){ controller.startPumping() }
+            }.frame(alignment: .leading)
+            
         }
     }
 }
+
+
+
+
+// Making picker work with observed objects
+// cannot use optionals
+// https://stackoverflow.com/questions/57912601/how-make-work-a-picker-with-an-observedobject-in-swiftui
+
+// Actual solution to picker with optionals:
+// use tag (port as ORSSerialPort?)
+// https://stackoverflow.com/questions/59348093/picker-for-optional-data-type-in-swiftui
