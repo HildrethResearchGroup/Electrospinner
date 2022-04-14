@@ -82,7 +82,7 @@ class Electrospinner: ObservableObject {
         while true {
             if let newpath = folderURL?.appendingPathComponent("\(filename).csv") {
                 if fileManager.fileExists(atPath: newpath.path) {
-                    filename = "\(sampleID)_\(fileNameIndex)"
+                    filename = "\(sampleID)\(fileNameIndex)"
                     fileNameIndex += 1
                 } else {
                     filename = newpath.path
