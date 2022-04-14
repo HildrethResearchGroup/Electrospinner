@@ -23,3 +23,7 @@ struct ElectrospinnerApp: App {
 #endif
     }
 }
+
+// Notes
+//Import ORSSerial Package: https://github.com/armadsen/ORSSerialPort.git
+//Disable app sandbox
