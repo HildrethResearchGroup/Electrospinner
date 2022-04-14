@@ -10,7 +10,9 @@ import Foundation
 class Electrospinner: ObservableObject {
     @Published var elapsedTime = 0
     @Published var isRunning = false
-    @Published var folderURL: URL? = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    @Published var folderURL: URL? = FileManager.default
+        .urls(for: .documentDirectory, in: .userDomainMask)[0]
+        .appendingPathComponent("Electrospinner")
     var timer = Timer()
     
     // Parameters

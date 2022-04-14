@@ -80,7 +80,6 @@
 				AAC3B40527F8D66E00DB4A59 /* ExamplePhoto.png */,
 				AA2AD9D127F7B04E001ED9A8 /* Views */,
 				AAC3B40227F8CCAF00DB4A59 /* Data Models */,
-				AA2AD9D227F7B07B001ED9A8 /* Equipment Controllers */,
 				AA2AD9C627F7B03C001ED9A8 /* Assets.xcassets */,
 				AA2AD9CB27F7B03C001ED9A8 /* Electrospinner.entitlements */,
 				AA2AD9C827F7B03C001ED9A8 /* Preview Content */,
@@ -111,19 +110,12 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		AA2AD9D227F7B07B001ED9A8 /* Equipment Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				AAC3B3FE27F8CC5200DB4A59 /* SyringePumpController.swift */,
-				AAC3B40027F8CC5F00DB4A59 /* VoltageSupplyController.swift */,
-			);
-			path = "Equipment Controllers";
-			sourceTree = "<group>";
-		};
 		AAC3B40227F8CCAF00DB4A59 /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
 				AAC3B40327F8CD4B00DB4A59 /* Electrospinner.swift */,
+				AAC3B3FE27F8CC5200DB4A59 /* SyringePumpController.swift */,
+				AAC3B40027F8CC5F00DB4A59 /* VoltageSupplyController.swift */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
