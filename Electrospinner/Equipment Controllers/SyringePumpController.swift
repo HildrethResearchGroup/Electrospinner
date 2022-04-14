@@ -9,6 +9,7 @@ import Foundation
 import ORSSerial
 
 class SyringePumpController: ObservableObject {
+    // MARK: - Serial Port Methods
     var serialPortManager: ORSSerialPortManager = ORSSerialPortManager.shared()
     @Published var serialPort: ORSSerialPort? {
         didSet {
@@ -19,6 +20,30 @@ class SyringePumpController: ObservableObject {
         }
     }
     @Published var nextPortState = "Open"
+    
+    func openOrClosePort() {
+        if let port = self.serialPort {
+            if (port.isOpen) {
+                port.close()
+                nextPortState = "Open"
+            } else {
+                port.open()
+                nextPortState = "Close"
+            }
+        }
+    }
+    
+    func send(_ sendData :String) {
+
+        let sendString = sendData + "\r\n" // adding line end characters for syringe pump to work
+        print(sendString)
+        if let data = sendString.data(using: String.Encoding.utf8) {
+            self.serialPort?.send(data)
+        }
+    }
+    
+    // MARK: - Syringe Pump Methods
+    @Published var nextPumpState: NextPumpState = .startPumping
     @Published var units: flowRateUnits = .nL_min
     @Published var flowRate: String = "20"
     
@@ -43,46 +68,36 @@ class SyringePumpController: ObservableObject {
             }
         }
     }
-
-    func openOrClosePort() {
-        if let port = self.serialPort {
-            if (port.isOpen) {
-                port.close()
-                nextPortState = "Open"
-            } else {
-                port.open()
-                nextPortState = "Close"
-            }
-        }
+    
+    enum NextPumpState: String {
+        case startPumping = "Start Pumping"
+        case stopPumping = "Stop Pumping"
     }
     
     func startOrStopPumping() {
-        if let port = self.serialPort {
-            if (port.isOpen) {
-                port.close()
-            } else {
-                port.open()
-            }
+        switch nextPumpState {
+        case .startPumping:
+            startPumping()
+            nextPumpState = .stopPumping
+        case .stopPumping:
+            stopPumping()
+            nextPumpState = .startPumping
         }
     }
     
-    func startPumping() {
-        send("FUN RAT") // entering rate mode
-        send("RAT \(flowRate) \(units.queryString)") // Setting new flow rate
-        send("RUN") // starting pump
+    private func startPumping() {
+        self.send("FUN RAT") // entering rate mode
+        // Adding delays
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.send("RAT \(self.flowRate) \(self.units.queryString)") // Setting new flow rate
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            self.send("RUN") // starting pump
+        }
     }
     
-    func stopPumping() {
+    private func stopPumping() {
         send("STP")
-    }
-    
-    func send(_ sendData :String) {
-
-        let sendString = sendData + "\r\n" // adding line end characters for syringe pump to work
-        print(sendString)
-        if let data = sendString.data(using: String.Encoding.utf8) {
-            self.serialPort?.send(data)
-        }
     }
 }
 

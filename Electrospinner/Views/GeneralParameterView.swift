@@ -9,13 +9,16 @@ import SwiftUI
 
 struct GeneralParameterView: View {
     @ObservedObject var electrospinner: Electrospinner
-
+    
     var body: some View {
-        Form {
-            TextField("RH [%]", text: $electrospinner.parameters.RH)
-            TextField("Tamb [°C]", text: $electrospinner.parameters.Tamb)
-            TextField("Solution", text: $electrospinner.parameters.solution)
-            TextField("Distance [cm]", text: $electrospinner.parameters.distance)
-        }.frame(alignment: .leading)
+        VStack{
+            Text("General Parameters").font(.title2).padding(.top, -5)
+            Form {
+                TextField("RH [%]", text: $electrospinner.RH)
+                TextField("Tamb [°C]", text: $electrospinner.Tamb)
+                TextField("Solution", text: $electrospinner.solution)
+                TextField("Distance [cm]", text: $electrospinner.distance)
+            }
+        }
     }
 }

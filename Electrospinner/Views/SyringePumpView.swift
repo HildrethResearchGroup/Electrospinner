@@ -12,33 +12,31 @@ struct SyringePumpView: View {
     @ObservedObject var controller: SyringePumpController
     
     var body: some View {
-        Form {
-            // Select Port
-            HStack {
-                Picker("Port", selection: $controller.serialPort) {
-                    ForEach(controller.serialPortManager.availablePorts, id:\.self) { port in
-                        Text(port.name).tag(port as ORSSerialPort?)
-                    }
-                }
-                Button(controller.nextPortState) {controller.openOrClosePort()}
-            }.frame(alignment: .leading)
-            
-            // Select units
-            HStack{
-                Form{
-                    HStack {
-                        Text("Flow Rate")
-                        TextField("", text: $controller.flowRate)
-                    }
-                    
-                    Picker("Units", selection: $controller.units) {
-                        ForEach(SyringePumpController.flowRateUnits.allCases) { unit in
-                            Text(unit.rawValue)
+        VStack{
+            Text("Syringe Pump").font(.title2).padding(.top, -5)
+            Form {
+                // Select Port
+                HStack {
+                    Picker("Port", selection: $controller.serialPort) {
+                        ForEach(controller.serialPortManager.availablePorts, id:\.self) { port in
+                            Text(port.name).tag(port as ORSSerialPort?)
                         }
                     }
+                    Button(controller.nextPortState) {controller.openOrClosePort()}
                 }
-                Button("Start Pumping"){ controller.startPumping() }
-                .padding()
+                
+                // Select units
+                HStack {
+                    TextField("Flow Rate", text: $controller.flowRate)
+                }
+                
+                Picker("Units", selection: $controller.units) {
+                    ForEach(SyringePumpController.flowRateUnits.allCases) { unit in
+                        Text(unit.rawValue)
+                    }
+                }
+                // Start Button
+                Button(controller.nextPumpState.rawValue){ controller.startOrStopPumping() }
             }
         }
     }

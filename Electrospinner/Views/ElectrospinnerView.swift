@@ -6,22 +6,38 @@
 //
 
 import SwiftUI
+import CoreMedia
 
 struct ElectrospinnerView: View {
     @ObservedObject var electrospinner: Electrospinner
+
     
     var body: some View {
-        Form {
-            TextField("Duration [s]", text: $electrospinner.parameters.distance)
-            TextField("Sample ID", text: $electrospinner.parameters.sampleID)
-            TextField("Notes", text: $electrospinner.parameters.notes)
-        }
-        VStack{
-            HStack {
-                Button("Start"){ electrospinner.startElectrospinning() }
-                Text("Elapsed Time: 0 / 60 s")
+        VStack {
+            Text("Electrospinner").font(.title2).padding(.top, -5)
+            Form {
+                TextField("Duration [s]", value: $electrospinner.duration, format: IntegerFormatStyle())
+                TextField("Sample ID", text: $electrospinner.sampleID)
+                TextField("Notes", text: $electrospinner.notes)
             }
-            Button("Abort"){}
+            Spacer(minLength: 5)
+            Button("Start"){ electrospinner.startElectrospinning() }
+                .disabled(startButtonDisabled)
+                .frame(maxWidth: .infinity)
+            Text("Elapsed Time: \(electrospinner.elapsedTime) / \(electrospinner.duration) s").font(.title3).frame(maxWidth: .infinity)
+                .frame(maxWidth: .infinity)
+                .padding(.all, 3)
+                .overlay(RoundedRectangle(cornerRadius: 10)
+                            .stroke(startButtonColor, lineWidth: 2))
+            Button("Abort"){electrospinner.abort()}.frame(maxWidth: .infinity)
         }
+    }
+    
+    var startButtonDisabled: Bool {
+        electrospinner.isRunning
+    }
+    
+    var startButtonColor: Color {
+        electrospinner.isRunning ? Color.green : Color.gray
     }
 }

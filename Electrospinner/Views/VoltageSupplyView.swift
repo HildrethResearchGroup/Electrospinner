@@ -12,24 +12,26 @@ struct VoltageSupplyView: View {
     @ObservedObject var controller: VoltageSupplyController
     
     var body: some View {
-        VStack {
-            
-            // Select Port
-            HStack {
-                Picker("Port", selection: $controller.serialPort) {
-                    ForEach(controller.serialPortManager.availablePorts, id:\.self) { port in
-                        Text(port.name).tag(port as ORSSerialPort?)
+        VStack{
+            Text("High-Voltage Supply").font(.title2).padding(.top, -5)
+            VStack {
+                // Select Port
+                HStack {
+                    Picker("              Port", selection: $controller.serialPort) {
+                        ForEach(controller.serialPortManager.availablePorts, id:\.self) { port in
+                            Text(port.name).tag(port as ORSSerialPort?)
+                        }
                     }
-                }
-                Button(controller.nextPortState) {controller.openOrClosePort()}
-            }.frame(alignment: .leading)
-            
-            // Set Voltage
-            HStack {
-                Text("Voltage [kV]:")
-                TextField("", text: $controller.voltage)
-            }.frame(alignment: .leading)
-            
+                    Button(controller.nextPortState) {controller.openOrClosePort()}
+                }.frame(alignment: .leading)
+                
+                // Set Voltage
+                HStack {
+                    Text("Voltage [kV]")
+                    TextField("", text: $controller.voltage)
+                }.frame(alignment: .leading)
+                
+            }
         }
     }
 }

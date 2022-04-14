@@ -9,7 +9,7 @@ import Foundation
 import ORSSerial
 
 class VoltageSupplyController: ObservableObject {
-    // MARK: -Serial Port Methods
+    // MARK: - Serial Port Methods
     var serialPortManager: ORSSerialPortManager = ORSSerialPortManager.shared()
     @Published var nextPortState = "Open"
     @Published var serialPort: ORSSerialPort? {
@@ -32,12 +32,13 @@ class VoltageSupplyController: ObservableObject {
     }
     
     func send(_ sendString :String) {
+        print("Voltate controller :\(sendString)")
         if let data = sendString.data(using: String.Encoding.utf8) {
             self.serialPort?.send(data)
         }
     }
     
-    // MARK: -Voltage Methods
+    // MARK: - Voltage Methods
     @Published var voltage: String = "255"
     
     func startVoltage() {

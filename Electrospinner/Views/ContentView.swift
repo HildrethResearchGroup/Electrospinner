@@ -8,34 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var electrospinner = Electrospinner()
+    @ObservedObject var electrospinner: Electrospinner
     
     var body: some View {
-        let titleFont: Font = .title2
-        
         HStack {
             VStack {
-                Text("Camera").font(titleFont)
+                Text("Camera").font(.title3)
                 CameraView()
-//                DinoLiteVideoView()
             }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             
             Divider()
             
             VStack {
-                Text("General Parameters").font(titleFont)
-                GeneralParameterView(electrospinner: electrospinner)
+                GeneralParameterView(electrospinner: electrospinner).padding()
                 Divider()
-                Text("Syringe Pump").font(titleFont)
-                SyringePumpView(controller: electrospinner.syringePump)
+                SyringePumpView(controller: electrospinner.syringePump).padding()
                 Divider()
-                Text("High-Voltage Supply").font(titleFont)
-                VoltageSupplyView(controller: electrospinner.voltageSupply)
-//                Divider()
-                Text("Electrospinner").font(titleFont)
-                ElectrospinnerView(electrospinner: electrospinner)
-            }.frame(minWidth: 100, idealWidth: 200, maxWidth: 300, maxHeight: .infinity, alignment: .topLeading)
-            
-        }.frame(minWidth: 500, maxWidth: .infinity, minHeight: 500, maxHeight: .infinity).padding()
+                VoltageSupplyView(controller: electrospinner.voltageSupply).padding()
+                Divider()
+                ElectrospinnerView(electrospinner: electrospinner).padding()
+            }.frame(minWidth: 100, idealWidth: 200, maxWidth: 300, minHeight: 400, idealHeight: 800, maxHeight: .infinity, alignment: .topLeading)
+        }.frame(minWidth: 500, idealWidth: 800, maxWidth: .infinity, minHeight: 800, maxHeight: .infinity).padding()
     }
 }
