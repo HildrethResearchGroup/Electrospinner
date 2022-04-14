@@ -32,13 +32,13 @@ class VoltageSupplyController: ObservableObject {
     }
     
     func send(_ sendString :String) {
-        print("Voltate controller :\(sendString)")
+        print("Voltage controller sent:\(sendString)")
         if let data = sendString.data(using: String.Encoding.utf8) {
             self.serialPort?.send(data)
         }
     }
     
-    // MARK: - Voltage Methods
+    // MARK: - Voltage Controller Methods
     @Published var voltage: String = "255"
     
     func startVoltage() {

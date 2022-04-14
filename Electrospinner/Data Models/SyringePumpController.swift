@@ -36,13 +36,13 @@ class SyringePumpController: ObservableObject {
     func send(_ sendData :String) {
 
         let sendString = sendData + "\r\n" // adding line end characters for syringe pump to work
-        print(sendString)
+        print("Syringe pump controller sent:\(sendString)")
         if let data = sendString.data(using: String.Encoding.utf8) {
             self.serialPort?.send(data)
         }
     }
     
-    // MARK: - Syringe Pump Methods
+    // MARK: - Syringe Pump Controller Methods
     @Published var nextPumpState: NextPumpState = .startPumping
     @Published var units: flowRateUnits = .nL_min
     @Published var flowRate: String = "20"
@@ -87,7 +87,7 @@ class SyringePumpController: ObservableObject {
     
     private func startPumping() {
         self.send("FUN RAT") // entering rate mode
-        // Adding delays
+        // Adding delays for serial communication to work
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
             self.send("RAT \(self.flowRate) \(self.units.queryString)") // Setting new flow rate
         }
