@@ -11,9 +11,17 @@ class Electrospinner: ObservableObject {
     
     let syringePump = SyringePumpController()
     let voltageSupply = VoltageSupplyController()
+    @Published var parameters = Parameters()
     
     func startElectrospinning() {
-        return
+        // start camera
+        // start voltage
+        // wait to time
+        // stop voltage
+        // stop camera
+        // save video and param file
+        voltageSupply.startVoltage()
+        
     }
     
     func saveParameters() {

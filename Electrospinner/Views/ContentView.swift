@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var electrospinner = Electrospinner()
+    
     var body: some View {
         let titleFont: Font = .title2
         
@@ -21,17 +23,17 @@ struct ContentView: View {
             Divider()
             
             VStack {
+                Text("General Parameters").font(titleFont)
+                GeneralParameterView(electrospinner: electrospinner)
+                Divider()
                 Text("Syringe Pump").font(titleFont)
-                SyringePumpView()
+                SyringePumpView(controller: electrospinner.syringePump)
                 Divider()
                 Text("High-Voltage Supply").font(titleFont)
-                VoltageSupplyView()
-                Divider()
-                Text("Parameters").font(titleFont)
-                ParameterView()
-                Divider()
+                VoltageSupplyView(controller: electrospinner.voltageSupply)
+//                Divider()
                 Text("Electrospinner").font(titleFont)
-//                ElectrospinnerView()
+                ElectrospinnerView(electrospinner: electrospinner)
             }.frame(minWidth: 100, idealWidth: 200, maxWidth: 300, maxHeight: .infinity, alignment: .topLeading)
             
         }.frame(minWidth: 500, maxWidth: .infinity, minHeight: 500, maxHeight: .infinity).padding()

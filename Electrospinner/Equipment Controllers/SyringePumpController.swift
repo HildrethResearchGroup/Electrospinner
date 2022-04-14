@@ -25,12 +25,12 @@ class SyringePumpController: ObservableObject {
     enum flowRateUnits: String, CaseIterable, Identifiable {
         var id: Self {self}
         
-        case mm_hr = "ml/hr"
-        case uL_hr = "µl/hr"
-        case nL_hr = "nl/hr"
-        case mm_min = "ml/min"
-        case uL_min = "µl/min"
-        case nL_min = "nl/min"
+        case mm_hr = "ml / hr"
+        case uL_hr = "µl / hr"
+        case nL_hr = "nl / hr"
+        case mm_min = "ml / min"
+        case uL_min = "µl / min"
+        case nL_min = "nl / min"
         
         var queryString: String {
             switch self {

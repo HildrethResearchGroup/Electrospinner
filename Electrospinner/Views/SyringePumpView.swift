@@ -9,13 +9,13 @@ import SwiftUI
 import ORSSerial
 
 struct SyringePumpView: View {
-    @ObservedObject var controller = SyringePumpController()
+    @ObservedObject var controller: SyringePumpController
     
     var body: some View {
-        VStack {
-            
+        Form {
+            // Select Port
             HStack {
-                Picker("Select Port", selection: $controller.serialPort) {
+                Picker("Port", selection: $controller.serialPort) {
                     ForEach(controller.serialPortManager.availablePorts, id:\.self) { port in
                         Text(port.name).tag(port as ORSSerialPort?)
                     }
@@ -23,26 +23,26 @@ struct SyringePumpView: View {
                 Button(controller.nextPortState) {controller.openOrClosePort()}
             }.frame(alignment: .leading)
             
-            HStack {
-                TextField("Flow Rate: ", text: $controller.flowRate)
-                Picker("Units: ", selection: $controller.units) {
-                    ForEach(SyringePumpController.flowRateUnits.allCases) { unit in
-                        Text(unit.rawValue)
+            // Select units
+            HStack{
+                Form{
+                    HStack {
+                        Text("Flow Rate")
+                        TextField("", text: $controller.flowRate)
+                    }
+                    
+                    Picker("Units", selection: $controller.units) {
+                        ForEach(SyringePumpController.flowRateUnits.allCases) { unit in
+                            Text(unit.rawValue)
+                        }
                     }
                 }
-                Button("Set Flow Rate"){ controller.startPumping() }
-            }.frame(alignment: .leading)
-            
+                Button("Start Pumping"){ controller.startPumping() }
+                .padding()
+            }
         }
     }
 }
-
-
-
-
-// Making picker work with observed objects
-// cannot use optionals
-// https://stackoverflow.com/questions/57912601/how-make-work-a-picker-with-an-observedobject-in-swiftui
 
 // Actual solution to picker with optionals:
 // use tag (port as ORSSerialPort?)
