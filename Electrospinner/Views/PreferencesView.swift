@@ -16,7 +16,7 @@ struct PreferencesView: View {
                 Spacer()
                 Button("Browse...") {importURL()}
             }
-            Text(electrospinner.folderURL?.absoluteString ?? "No Folder Selected")
+            Text(electrospinner.folderURL?.path ?? "No Folder Selected")
                 .frame(maxWidth: .infinity)
                 .padding()
                 .overlay(RoundedRectangle(cornerRadius: 3)

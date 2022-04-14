@@ -14,9 +14,9 @@ struct GeneralParameterView: View {
         VStack{
             Text("General Parameters").font(.title2).padding(.top, -5)
             Form {
+                TextField("Solution", text: $electrospinner.solution)
                 TextField("RH [%]", text: $electrospinner.RH)
                 TextField("Tamb [°C]", text: $electrospinner.Tamb)
-                TextField("Solution", text: $electrospinner.solution)
                 TextField("Distance [cm]", text: $electrospinner.distance)
             }
         }
