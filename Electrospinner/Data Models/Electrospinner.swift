@@ -33,19 +33,21 @@ class Electrospinner: ObservableObject {
         elapsedTime = 0
         isRunning = true
         startTimer()
-        let deadlineTime = DispatchTime.now() + DispatchTimeInterval.seconds(duration)
         
-        // start camera
+        // TODO: - start camera
         
         // start voltage
         voltageSupply.startVoltage()
         
         // wait for time to elapse and turn off voltage
+        let deadlineTime = DispatchTime.now() + DispatchTimeInterval.seconds(duration)
         DispatchQueue.main.asyncAfter(deadline: deadlineTime) {
             self.isRunning = false
             self.voltageSupply.stopVoltage()
-            // stop camera
-            // save video
+            
+            // TODO: - stop camera
+            // TODO: - save video
+            
             // save param file
             self.saveParameters()
         }
@@ -70,7 +72,7 @@ class Electrospinner: ObservableObject {
                                    atomically: true,
                                    encoding: .utf8)
         } catch {
-            print("Save Error:", error)
+            print("Save File Error:", error)
             return
         }
     }

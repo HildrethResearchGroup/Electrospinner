@@ -86,12 +86,15 @@ class SyringePumpController: ObservableObject {
     }
     
     private func startPumping() {
-        self.send("FUN RAT") // entering rate mode
+        self.send("") // Sending empty string first seems to make things more consistant
         // Adding delays for serial communication to work
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.send("RAT \(self.flowRate) \(self.units.queryString)") // Setting new flow rate
+            self.send("FUN RAT") // entering rate mode
         }
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            self.send("RAT \(self.flowRate) \(self.units.queryString)") // Setting new flow rate
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
             self.send("RUN") // starting pump
         }
     }
