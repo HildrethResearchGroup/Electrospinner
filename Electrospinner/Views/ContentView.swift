@@ -11,14 +11,6 @@ struct ContentView: View {
     @ObservedObject var electrospinner: Electrospinner
     
     var body: some View {
-//        HStack {
-//            VStack {
-//                Text("Camera").font(.title3)
-//                CameraView()
-//            }.frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-//            
-//            Divider()
-            
             VStack {
                 GeneralParameterView(electrospinner: electrospinner).padding()
                 Divider()

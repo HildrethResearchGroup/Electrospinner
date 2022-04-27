@@ -42,7 +42,11 @@ class VoltageSupplyController: ObservableObject {
     @Published var voltage: String = "255"
     
     func startVoltage() {
-        send(voltage)
+        // scale voltage
+        let maxVoltage = 3.3
+        let maxBit = 255.0
+        let scaledVoltage = (Double(voltage) ?? 0.0) * maxBit / maxVoltage
+        send(String(Int(scaledVoltage)))
     }
     
     func stopVoltage() {
