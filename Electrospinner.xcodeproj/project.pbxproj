@@ -10,6 +10,14 @@
 		AA0E6B4228009AA7008FDBA0 /* VoltageSupplyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0E6B4128009AA7008FDBA0 /* VoltageSupplyView.swift */; };
 		AA16FB682819B880008E5CBD /* SetVoltage.ino in Resources */ = {isa = PBXBuildFile; fileRef = AA16FB672819B880008E5CBD /* SetVoltage.ino */; };
 		AA19E38727FCCDF700E72714 /* ElectrospinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA19E38627FCCDF700E72714 /* ElectrospinnerView.swift */; };
+		AA1EF3D0288F129E00C8E714 /* AVCaptureDevice+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1EF3C9288F129E00C8E714 /* AVCaptureDevice+UI.swift */; };
+		AA1EF3D1288F129E00C8E714 /* CameraViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AA1EF3CA288F129E00C8E714 /* CameraViewController.xib */; };
+		AA1EF3D2288F129E00C8E714 /* CameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1EF3CB288F129E00C8E714 /* CameraViewController.swift */; };
+		AA1EF3D3288F129E00C8E714 /* CameraViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1EF3CC288F129E00C8E714 /* CameraViewControllerDelegate.swift */; };
+		AA1EF3D4288F129E00C8E714 /* DeviceCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1EF3CD288F129E00C8E714 /* DeviceCameraView.swift */; };
+		AA1EF3D5288F129E00C8E714 /* RecordingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1EF3CE288F129E00C8E714 /* RecordingState.swift */; };
+		AA1EF3D6288F129E00C8E714 /* SelectableCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1EF3CF288F129E00C8E714 /* SelectableCameraView.swift */; };
+		AA1EF3D8288F1E2E00C8E714 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA1EF3D7288F1E2E00C8E714 /* Info.plist */; };
 		AA2AD9C327F7B03B001ED9A8 /* ElectrospinnerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2AD9C227F7B03B001ED9A8 /* ElectrospinnerApp.swift */; };
 		AA2AD9C527F7B03B001ED9A8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2AD9C427F7B03B001ED9A8 /* ContentView.swift */; };
 		AA2AD9C727F7B03C001ED9A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA2AD9C627F7B03C001ED9A8 /* Assets.xcassets */; };
@@ -27,6 +35,14 @@
 		AA0E6B4128009AA7008FDBA0 /* VoltageSupplyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoltageSupplyView.swift; sourceTree = "<group>"; };
 		AA16FB672819B880008E5CBD /* SetVoltage.ino */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SetVoltage.ino; sourceTree = "<group>"; };
 		AA19E38627FCCDF700E72714 /* ElectrospinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrospinnerView.swift; sourceTree = "<group>"; };
+		AA1EF3C9288F129E00C8E714 /* AVCaptureDevice+UI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVCaptureDevice+UI.swift"; sourceTree = "<group>"; };
+		AA1EF3CA288F129E00C8E714 /* CameraViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CameraViewController.xib; sourceTree = "<group>"; };
+		AA1EF3CB288F129E00C8E714 /* CameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController.swift; sourceTree = "<group>"; };
+		AA1EF3CC288F129E00C8E714 /* CameraViewControllerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewControllerDelegate.swift; sourceTree = "<group>"; };
+		AA1EF3CD288F129E00C8E714 /* DeviceCameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCameraView.swift; sourceTree = "<group>"; };
+		AA1EF3CE288F129E00C8E714 /* RecordingState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecordingState.swift; sourceTree = "<group>"; };
+		AA1EF3CF288F129E00C8E714 /* SelectableCameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectableCameraView.swift; sourceTree = "<group>"; };
+		AA1EF3D7288F1E2E00C8E714 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA2AD9BF27F7B03B001ED9A8 /* Electrospinner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Electrospinner.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA2AD9C227F7B03B001ED9A8 /* ElectrospinnerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectrospinnerApp.swift; sourceTree = "<group>"; };
 		AA2AD9C427F7B03B001ED9A8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +85,20 @@
 			path = SetVoltage;
 			sourceTree = "<group>";
 		};
+		AA1EF3C8288F129E00C8E714 /* CameraViews */ = {
+			isa = PBXGroup;
+			children = (
+				AA1EF3C9288F129E00C8E714 /* AVCaptureDevice+UI.swift */,
+				AA1EF3CA288F129E00C8E714 /* CameraViewController.xib */,
+				AA1EF3CB288F129E00C8E714 /* CameraViewController.swift */,
+				AA1EF3CC288F129E00C8E714 /* CameraViewControllerDelegate.swift */,
+				AA1EF3CD288F129E00C8E714 /* DeviceCameraView.swift */,
+				AA1EF3CE288F129E00C8E714 /* RecordingState.swift */,
+				AA1EF3CF288F129E00C8E714 /* SelectableCameraView.swift */,
+			);
+			path = CameraViews;
+			sourceTree = "<group>";
+		};
 		AA2AD9B627F7B03B001ED9A8 = {
 			isa = PBXGroup;
 			children = (
@@ -88,8 +118,9 @@
 		AA2AD9C127F7B03B001ED9A8 /* Electrospinner */ = {
 			isa = PBXGroup;
 			children = (
-				AA16FB652819B867008E5CBD /* Arduino Code */,
+				AA1EF3D7288F1E2E00C8E714 /* Info.plist */,
 				AA2AD9C227F7B03B001ED9A8 /* ElectrospinnerApp.swift */,
+				AA16FB652819B867008E5CBD /* Arduino Code */,
 				AA2AD9D127F7B04E001ED9A8 /* Views */,
 				AAC3B40227F8CCAF00DB4A59 /* Data Models */,
 				AA2AD9C627F7B03C001ED9A8 /* Assets.xcassets */,
@@ -111,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				AA2AD9C427F7B03B001ED9A8 /* ContentView.swift */,
+				AA1EF3C8288F129E00C8E714 /* CameraViews */,
 				AA2AD9DB27F7B0F7001ED9A8 /* GeneralParameterView.swift */,
 				AA2AD9D927F7B0D3001ED9A8 /* SyringePumpView.swift */,
 				AA0E6B4128009AA7008FDBA0 /* VoltageSupplyView.swift */,
@@ -161,7 +193,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1320;
+				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					AA2AD9BE27F7B03B001ED9A8 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -195,7 +227,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA2AD9CA27F7B03C001ED9A8 /* Preview Assets.xcassets in Resources */,
+				AA1EF3D1288F129E00C8E714 /* CameraViewController.xib in Resources */,
 				AA2AD9C727F7B03C001ED9A8 /* Assets.xcassets in Resources */,
+				AA1EF3D8288F1E2E00C8E714 /* Info.plist in Resources */,
 				AA16FB682819B880008E5CBD /* SetVoltage.ino in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,10 +245,16 @@
 				AA2AD9DA27F7B0D3001ED9A8 /* SyringePumpView.swift in Sources */,
 				AA0E6B4228009AA7008FDBA0 /* VoltageSupplyView.swift in Sources */,
 				AAA7E77C2807B7EC0008745A /* PreferencesView.swift in Sources */,
+				AA1EF3D2288F129E00C8E714 /* CameraViewController.swift in Sources */,
 				AAC3B40427F8CD4B00DB4A59 /* Electrospinner.swift in Sources */,
 				AAC3B40127F8CC6000DB4A59 /* VoltageSupplyController.swift in Sources */,
 				AA2AD9C327F7B03B001ED9A8 /* ElectrospinnerApp.swift in Sources */,
+				AA1EF3D0288F129E00C8E714 /* AVCaptureDevice+UI.swift in Sources */,
+				AA1EF3D4288F129E00C8E714 /* DeviceCameraView.swift in Sources */,
+				AA1EF3D3288F129E00C8E714 /* CameraViewControllerDelegate.swift in Sources */,
 				AAC3B3FF27F8CC5200DB4A59 /* SyringePumpController.swift in Sources */,
+				AA1EF3D5288F129E00C8E714 /* RecordingState.swift in Sources */,
+				AA1EF3D6288F129E00C8E714 /* SelectableCameraView.swift in Sources */,
 				AA19E38727FCCDF700E72714 /* ElectrospinnerView.swift in Sources */,
 				AA2AD9DC27F7B0F7001ED9A8 /* GeneralParameterView.swift in Sources */,
 			);
@@ -274,7 +314,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -329,7 +369,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 12.1;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -344,12 +384,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Electrospinner/Electrospinner.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Electrospinner/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Electrospinner/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -369,12 +411,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Electrospinner/Electrospinner.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Electrospinner/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Electrospinner/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
