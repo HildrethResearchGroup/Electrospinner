@@ -30,6 +30,7 @@
 		AAEE4D3B28079140009DD718 /* ORSSerial in Frameworks */ = {isa = PBXBuildFile; productRef = AAEE4D3A28079140009DD718 /* ORSSerial */; };
 		C0D0DA242D970C5600E47E26 /* ignore.gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C0D0DA232D970C5600E47E26 /* ignore.gitignore */; };
 		C0D0DA262D97420A00E47E26 /* PortState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D0DA252D97420A00E47E26 /* PortState.swift */; };
+		C0D0DA282D9751E000E47E26 /* EquipmentState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D0DA272D9751E000E47E26 /* EquipmentState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,7 @@
 		AAC3B40327F8CD4B00DB4A59 /* Electrospinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Electrospinner.swift; sourceTree = "<group>"; };
 		C0D0DA232D970C5600E47E26 /* ignore.gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = ignore.gitignore; sourceTree = "<group>"; };
 		C0D0DA252D97420A00E47E26 /* PortState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortState.swift; sourceTree = "<group>"; };
+		C0D0DA272D9751E000E47E26 /* EquipmentState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				AAC3B3FE27F8CC5200DB4A59 /* SyringePumpController.swift */,
 				AAC3B40027F8CC5F00DB4A59 /* VoltageSupplyController.swift */,
 				C0D0DA252D97420A00E47E26 /* PortState.swift */,
+				C0D0DA272D9751E000E47E26 /* EquipmentState.swift */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				AA1EF3D3288F129E00C8E714 /* CameraViewControllerDelegate.swift in Sources */,
 				AAC3B3FF27F8CC5200DB4A59 /* SyringePumpController.swift in Sources */,
 				AA1EF3D5288F129E00C8E714 /* RecordingState.swift in Sources */,
+				C0D0DA282D9751E000E47E26 /* EquipmentState.swift in Sources */,
 				AA1EF3D6288F129E00C8E714 /* SelectableCameraView.swift in Sources */,
 				AA19E38727FCCDF700E72714 /* ElectrospinnerView.swift in Sources */,
 				AA2AD9DC27F7B0F7001ED9A8 /* GeneralParameterView.swift in Sources */,

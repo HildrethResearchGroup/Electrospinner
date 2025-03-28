@@ -54,7 +54,7 @@ class SyringePumpController {
     }
     
     // MARK: - Syringe Pump Controller Methods
-    var nextPumpState: NextPumpState = .startPumping
+    var pumpState: EquipmentState = .off
     var units: flowRateUnits = .nL_min
     var flowRate: String = "20"
     
@@ -80,23 +80,18 @@ class SyringePumpController {
         }
     }
     
-    enum NextPumpState: String {
-        case startPumping = "Start Pumping"
-        case stopPumping = "Stop Pumping"
-    }
     
     func startOrStopPumping() {
-        switch nextPumpState {
-        case .startPumping:
+        switch pumpState {
+        case .off:
             startPumping()
-            nextPumpState = .stopPumping
-        case .stopPumping:
+        case .on:
             stopPumping()
-            nextPumpState = .startPumping
         }
     }
     
     private func startPumping() {
+        self.pumpState = .on
         self.send("") // Sending empty string first seems to make things more consistant
         // Adding delays for serial communication to work
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
@@ -111,7 +106,13 @@ class SyringePumpController {
     }
     
     private func stopPumping() {
+        self.pumpState = .off
         send("STP")
+    }
+    
+    
+    var onOffButtonLabel: String {
+        return pumpState == .on ? "Pump Off" : "Pump On"
     }
 }
 

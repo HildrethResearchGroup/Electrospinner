@@ -37,7 +37,7 @@ struct SyringePumpView: View {
                 }
                 
                 // Start Button
-                Button(controller.nextPumpState.rawValue){ controller.startOrStopPumping() }
+                Button(controller.onOffButtonLabel){ controller.startOrStopPumping() }
             }
         }
     }

@@ -41,7 +41,7 @@ class VoltageSupplyController: ObservableObject {
     
     // MARK: - Voltage Controller Methods
     var voltage: String = "0"
-    var voltageState: VoltageState = .off
+    var voltageState: EquipmentState = .off
     
     func startVoltage() {
         // scale voltage
@@ -56,11 +56,6 @@ class VoltageSupplyController: ObservableObject {
     func stopVoltage() {
         send("0")
         voltageState = .off
-    }
-    
-    enum VoltageState: String {
-        case on
-        case off
     }
     
     var onOffButtonLabel: String {
