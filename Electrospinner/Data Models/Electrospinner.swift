@@ -7,6 +7,7 @@
 
 import Foundation
 
+
 class Electrospinner: ObservableObject {
     @Published var elapsedTime = 0
     @Published var isRunning = false
