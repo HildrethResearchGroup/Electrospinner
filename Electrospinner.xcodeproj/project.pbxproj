@@ -17,7 +17,6 @@
 		AA1EF3D4288F129E00C8E714 /* DeviceCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1EF3CD288F129E00C8E714 /* DeviceCameraView.swift */; };
 		AA1EF3D5288F129E00C8E714 /* RecordingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1EF3CE288F129E00C8E714 /* RecordingState.swift */; };
 		AA1EF3D6288F129E00C8E714 /* SelectableCameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1EF3CF288F129E00C8E714 /* SelectableCameraView.swift */; };
-		AA1EF3D8288F1E2E00C8E714 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AA1EF3D7288F1E2E00C8E714 /* Info.plist */; };
 		AA2AD9C327F7B03B001ED9A8 /* ElectrospinnerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2AD9C227F7B03B001ED9A8 /* ElectrospinnerApp.swift */; };
 		AA2AD9C527F7B03B001ED9A8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA2AD9C427F7B03B001ED9A8 /* ContentView.swift */; };
 		AA2AD9C727F7B03C001ED9A8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA2AD9C627F7B03C001ED9A8 /* Assets.xcassets */; };
@@ -30,6 +29,7 @@
 		AAC3B40427F8CD4B00DB4A59 /* Electrospinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC3B40327F8CD4B00DB4A59 /* Electrospinner.swift */; };
 		AAEE4D3B28079140009DD718 /* ORSSerial in Frameworks */ = {isa = PBXBuildFile; productRef = AAEE4D3A28079140009DD718 /* ORSSerial */; };
 		C0D0DA242D970C5600E47E26 /* ignore.gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C0D0DA232D970C5600E47E26 /* ignore.gitignore */; };
+		C0D0DA262D97420A00E47E26 /* PortState.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D0DA252D97420A00E47E26 /* PortState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +57,7 @@
 		AAC3B40027F8CC5F00DB4A59 /* VoltageSupplyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoltageSupplyController.swift; sourceTree = "<group>"; };
 		AAC3B40327F8CD4B00DB4A59 /* Electrospinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Electrospinner.swift; sourceTree = "<group>"; };
 		C0D0DA232D970C5600E47E26 /* ignore.gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = ignore.gitignore; sourceTree = "<group>"; };
+		C0D0DA252D97420A00E47E26 /* PortState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +162,7 @@
 				AAC3B40327F8CD4B00DB4A59 /* Electrospinner.swift */,
 				AAC3B3FE27F8CC5200DB4A59 /* SyringePumpController.swift */,
 				AAC3B40027F8CC5F00DB4A59 /* VoltageSupplyController.swift */,
+				C0D0DA252D97420A00E47E26 /* PortState.swift */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -196,7 +198,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 1620;
 				TargetAttributes = {
 					AA2AD9BE27F7B03B001ED9A8 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -232,7 +234,6 @@
 				AA2AD9CA27F7B03C001ED9A8 /* Preview Assets.xcassets in Resources */,
 				AA1EF3D1288F129E00C8E714 /* CameraViewController.xib in Resources */,
 				AA2AD9C727F7B03C001ED9A8 /* Assets.xcassets in Resources */,
-				AA1EF3D8288F1E2E00C8E714 /* Info.plist in Resources */,
 				C0D0DA242D970C5600E47E26 /* ignore.gitignore in Resources */,
 				AA16FB682819B880008E5CBD /* SetVoltage.ino in Resources */,
 			);
@@ -255,6 +256,7 @@
 				AA2AD9C327F7B03B001ED9A8 /* ElectrospinnerApp.swift in Sources */,
 				AA1EF3D0288F129E00C8E714 /* AVCaptureDevice+UI.swift in Sources */,
 				AA1EF3D4288F129E00C8E714 /* DeviceCameraView.swift in Sources */,
+				C0D0DA262D97420A00E47E26 /* PortState.swift in Sources */,
 				AA1EF3D3288F129E00C8E714 /* CameraViewControllerDelegate.swift in Sources */,
 				AAC3B3FF27F8CC5200DB4A59 /* SyringePumpController.swift in Sources */,
 				AA1EF3D5288F129E00C8E714 /* RecordingState.swift in Sources */,
@@ -301,9 +303,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -362,9 +366,11 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -392,6 +398,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Electrospinner/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -420,6 +427,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Electrospinner/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;

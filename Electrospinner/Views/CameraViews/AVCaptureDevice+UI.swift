@@ -19,7 +19,7 @@ extension AVCaptureDevice.Format {
 	}
 }
 
-extension AVCaptureDevice: Identifiable {
+extension AVCaptureDevice: @retroactive Identifiable {
 	public var id: ObjectIdentifier {
 		return ObjectIdentifier(self)
 	}

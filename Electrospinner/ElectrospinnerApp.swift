@@ -9,12 +9,13 @@ import SwiftUI
 
 @main
 struct ElectrospinnerApp: App {
-    @ObservedObject var electrospinner = Electrospinner()
+    @State var electrospinner = Electrospinner()
     
     var body: some Scene {
         WindowGroup {
             ContentView(electrospinner: electrospinner)
         }
+        
 #if os(macOS)
         Settings {
             PreferencesView(electrospinner: electrospinner)

@@ -9,7 +9,7 @@ import SwiftUI
 import ORSSerial
 
 struct SyringePumpView: View {
-    @ObservedObject var controller: SyringePumpController
+    @Bindable var controller: SyringePumpController
     
     var body: some View {
         VStack{

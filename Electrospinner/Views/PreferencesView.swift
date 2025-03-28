@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PreferencesView: View {
-    @ObservedObject var electrospinner: Electrospinner
+    @Bindable var electrospinner: Electrospinner
     var body: some View {
         VStack {
             HStack {

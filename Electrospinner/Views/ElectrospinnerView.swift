@@ -9,7 +9,7 @@ import SwiftUI
 import CoreMedia
 
 struct ElectrospinnerView: View {
-    @ObservedObject var electrospinner: Electrospinner
+    @Bindable var electrospinner: Electrospinner
 
     
     var body: some View {

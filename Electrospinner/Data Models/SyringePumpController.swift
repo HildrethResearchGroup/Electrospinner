@@ -8,10 +8,11 @@
 import Foundation
 import ORSSerial
 
-class SyringePumpController: ObservableObject {
+@Observable
+class SyringePumpController {
     // MARK: - Serial Port Methods
     var serialPortManager: ORSSerialPortManager = ORSSerialPortManager.shared()
-    @Published var serialPort: ORSSerialPort? {
+    var serialPort: ORSSerialPort? {
         didSet {
             serialPort?.numberOfStopBits = 1
             serialPort?.parity = .none
@@ -19,17 +20,27 @@ class SyringePumpController: ObservableObject {
             serialPort?.shouldEchoReceivedData = true
         }
     }
-    @Published var nextPortState = "Open"
+    var nextPortState: String {
+        switch portState {
+        case .closed: return "Open"
+        case .open: return "Close"
+        }
+    }
+    
+    var portState: PortState = .closed
+    
     
     func openOrClosePort() {
         if let port = self.serialPort {
             if (port.isOpen) {
                 port.close()
-                nextPortState = "Open"
+                portState = .closed
             } else {
                 port.open()
-                nextPortState = "Close"
+                portState = .open
             }
+        } else {
+            portState = .closed
         }
     }
     
@@ -43,9 +54,9 @@ class SyringePumpController: ObservableObject {
     }
     
     // MARK: - Syringe Pump Controller Methods
-    @Published var nextPumpState: NextPumpState = .startPumping
-    @Published var units: flowRateUnits = .nL_min
-    @Published var flowRate: String = "20"
+    var nextPumpState: NextPumpState = .startPumping
+    var units: flowRateUnits = .nL_min
+    var flowRate: String = "20"
     
     enum flowRateUnits: String, CaseIterable, Identifiable {
         var id: Self {self}
@@ -104,6 +115,6 @@ class SyringePumpController: ObservableObject {
     }
 }
 
-extension ORSSerialPort: Identifiable {
+extension ORSSerialPort: @retroactive Identifiable {
     public var id: ORSSerialPort {return self}
 }

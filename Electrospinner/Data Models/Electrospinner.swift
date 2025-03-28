@@ -6,28 +6,30 @@
 //
 
 import Foundation
+import SwiftUI
 
 
-class Electrospinner: ObservableObject {
-    @Published var elapsedTime = 0
-    @Published var isRunning = false
-    @Published var folderURL: URL? = FileManager.default
+@Observable
+class Electrospinner {
+    var elapsedTime = 0
+    var isRunning = false
+    var folderURL: URL? = FileManager.default
         .urls(for: .documentDirectory, in: .userDomainMask)[0]
         .appendingPathComponent("Electrospinner")
     var timer = Timer()
     
     // Parameters
-    @Published var solution = ""
-    @Published var RH = ""
-    @Published var Tamb = ""
-    @Published var distance = ""
-    @Published var duration: Int = 1
-    @Published var sampleID = ""
-    @Published var notes = "\n\n\n"
+    var solution = ""
+    var RH = ""
+    var Tamb = ""
+    var distance = ""
+    var duration: Int = 1
+    var sampleID = ""
+    var notes = "\n\n\n"
     
     // Equipment
-    let syringePump = SyringePumpController()
-    let voltageSupply = VoltageSupplyController()
+    var syringePump = SyringePumpController()
+    var voltageSupply = VoltageSupplyController()
     
     func startElectrospinning() {
         // Start Timer

@@ -8,11 +8,12 @@
 import Foundation
 import ORSSerial
 
+@Observable
 class VoltageSupplyController: ObservableObject {
     // MARK: - Serial Port Methods
     var serialPortManager: ORSSerialPortManager = ORSSerialPortManager.shared()
-    @Published var nextPortState = "Open"
-    @Published var serialPort: ORSSerialPort? {
+    var nextPortState = "Open"
+    var serialPort: ORSSerialPort? {
         didSet {
             serialPort?.parity = .none
             serialPort?.baudRate = 9600
@@ -39,7 +40,8 @@ class VoltageSupplyController: ObservableObject {
     }
     
     // MARK: - Voltage Controller Methods
-    @Published var voltage: String = "0"
+    var voltage: String = "0"
+    var voltageState: VoltageState = .off
     
     func startVoltage() {
         // scale voltage
@@ -48,10 +50,25 @@ class VoltageSupplyController: ObservableObject {
         let scaleFactor = 0.99
         let scaledVoltage = (Double(voltage) ?? 0.0) * maxBit / maxHighVoltage * scaleFactor
         send(String(Int(scaledVoltage)))
+        voltageState = .on
     }
     
     func stopVoltage() {
         send("0")
+        voltageState = .off
+    }
+    
+    enum VoltageState: String {
+        case on
+        case off
+    }
+    
+    var onOffButtonLabel: String {
+        return voltageState == .on ? "Voltage Off" : "Voltage On"
+    }
+    
+    func turnVoltageOnOrOff() {
+        voltageState == .on ? stopVoltage() : startVoltage()
     }
 }
 

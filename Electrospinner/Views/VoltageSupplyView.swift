@@ -9,15 +9,14 @@ import SwiftUI
 import ORSSerial
 
 struct VoltageSupplyView: View {
-    @ObservedObject var controller: VoltageSupplyController
+    @Bindable var controller: VoltageSupplyController
     
     var body: some View {
         VStack{
             Text("High-Voltage Supply").font(.title2).padding(.top, -5)
-            VStack {
-                // Select Port
+            Form {
                 HStack {
-                    Picker("              Port", selection: $controller.serialPort) {
+                    Picker("Port", selection: $controller.serialPort) {
                         ForEach(controller.serialPortManager.availablePorts, id:\.self) { port in
                             Text(port.name).tag(port as ORSSerialPort?)
                         }
@@ -31,6 +30,8 @@ struct VoltageSupplyView: View {
                     TextField("", text: $controller.voltage)
                 }.frame(alignment: .leading)
                 
+                
+                Button(controller.onOffButtonLabel) {controller.turnVoltageOnOrOff()}
             }
         }
     }

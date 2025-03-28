@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var electrospinner: Electrospinner
+    @Bindable var electrospinner: Electrospinner
     
     var body: some View {
         HSplitView {
