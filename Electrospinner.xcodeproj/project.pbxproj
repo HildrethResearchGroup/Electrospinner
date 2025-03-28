@@ -29,6 +29,7 @@
 		AAC3B40127F8CC6000DB4A59 /* VoltageSupplyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC3B40027F8CC5F00DB4A59 /* VoltageSupplyController.swift */; };
 		AAC3B40427F8CD4B00DB4A59 /* Electrospinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC3B40327F8CD4B00DB4A59 /* Electrospinner.swift */; };
 		AAEE4D3B28079140009DD718 /* ORSSerial in Frameworks */ = {isa = PBXBuildFile; productRef = AAEE4D3A28079140009DD718 /* ORSSerial */; };
+		C0D0DA242D970C5600E47E26 /* ignore.gitignore in Resources */ = {isa = PBXBuildFile; fileRef = C0D0DA232D970C5600E47E26 /* ignore.gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		AAC3B3FE27F8CC5200DB4A59 /* SyringePumpController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyringePumpController.swift; sourceTree = "<group>"; };
 		AAC3B40027F8CC5F00DB4A59 /* VoltageSupplyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoltageSupplyController.swift; sourceTree = "<group>"; };
 		AAC3B40327F8CD4B00DB4A59 /* Electrospinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Electrospinner.swift; sourceTree = "<group>"; };
+		C0D0DA232D970C5600E47E26 /* ignore.gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = ignore.gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		AA2AD9B627F7B03B001ED9A8 = {
 			isa = PBXGroup;
 			children = (
+				C0D0DA232D970C5600E47E26 /* ignore.gitignore */,
 				AA2AD9C127F7B03B001ED9A8 /* Electrospinner */,
 				AA2AD9C027F7B03B001ED9A8 /* Products */,
 			);
@@ -230,6 +233,7 @@
 				AA1EF3D1288F129E00C8E714 /* CameraViewController.xib in Resources */,
 				AA2AD9C727F7B03C001ED9A8 /* Assets.xcassets in Resources */,
 				AA1EF3D8288F1E2E00C8E714 /* Info.plist in Resources */,
+				C0D0DA242D970C5600E47E26 /* ignore.gitignore in Resources */,
 				AA16FB682819B880008E5CBD /* SetVoltage.ino in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
